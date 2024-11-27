@@ -227,7 +227,7 @@
 
   /* 调整图片说明的样式 */
   figcaption {
-    font-size: 1em;
+    font-size: 4em;
     margin-top: 10px;
     color: #555;
     text-align: center;
@@ -240,22 +240,47 @@
 <!-- 摘要部分 -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <!-- 主标题 -->
-        <h1 class="title is-2">Machine Vision Models to Humans</h1>
+    <div class="columns is-vcentered">
+      <!-- 左侧文字部分 -->
+      <div class="column is-half">
+        <h1 class="title is-2">Main Title</h1>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- 章节内容 -->
+          <!-- 摘要内容 -->
           <p>
-            The CV models are trained on natural images, so You can find that they perform very well in these complex natural scenarios to estimate the object’s motion.
-           But, as we previously observed, these CV model shows a different interpretation of second-order motion, As shown is here, basically the can not recognize these second-order motion generate noisy response.
-
+            mation is an essential function for living things to interact with the world and has a wide range of application areas, 
+        such as dynamic interaction between robots and the environment and au
           </p>
         </div>
+      </div>
+      <!-- 右侧 GIF 图像 -->
+      <div class="column is-half has-text-centered">
+        <figure>
+          <img src="./static/gif/animation1.gif" alt="Animation 1" class="gif-image">
+          <figcaption>Animation 1 Description</figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* 调整GIF图像的样式 */
+  .gif-image {
+    max-width: 100%; /* 确保图片适应列宽 */
+    height: auto; /* 保持图片宽高比 */
+  }
+
+  /* 左侧文字部分样式优化 */
+  .content {
+    margin-top: 1em; /* 调整顶部间距 */
+  }
+
+  /* 调整文字与图像在垂直方向上的对齐 */
+  .columns.is-vcentered {
+    align-items: center;
+  }
+</style>
 
   
 
