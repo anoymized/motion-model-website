@@ -304,16 +304,20 @@
         <div class="content has-text-justified">
           <!-- 论文摘要内容，可以自行替换 -->
           <p>
-            As AI models are increasingly integrated into applications involving human interaction, 
-            understanding the alignment between human perception and machine vision has become essential. 
-            One example is the estimation of visual motion (optical flow) in dynamic applications such as driving assistance.
-            While there are numerous optical flow datasets and benchmarks with ground truth information, human-perceived flow in natural scenes remains underexplored.
-            We introduce HuPerFlow—a benchmark for human-perceived flow measured at 2,400 locations selected from ten representative computer vision optical flow datasets. 
-            Through online psychophysical experiments, we collected ~38,400 response vectors from 480 participant instances. 
-            Our data demonstrate that human-perceived flow aligns with ground truth in spatiotemporally smooth locations while also showing systematic errors influenced by various environmental properties.
-            Additionally, we evaluated several optical flow algorithms against human-perceived flow, uncovering both similarities and unique aspects of human perception in complex natural scenes.
-            HuPerFlow is the first large-scale human-perceived flow benchmark for alignment between computer vision models and human perception, 
-            as well as for scientific exploration of human motion perception in natural scenes. The HuPerFlow benchmark will be available online upon acceptance.
+           The objective of this study is to develop machines that naturally learn to perceive visual motion as humans do. 
+            While recent advances in computer vision (CV) have enabled DNN-based models to accurately estimate optical flow in naturalistic images, 
+            a significant disparity remains between CV models and the biological visual system in both architecture and behavior. 
+            This disparity includes humans' ability to perceive the motion of higher-order image features (second-order motion), 
+            which many CV models fail to capture due to their reliance on the intensity conservation law. 
+            Our model architecture mimics the cortical V1-MT motion processing pathway, utilizing a trainable motion energy sensor bank and a recurrent self-attention network. 
+            Supervised learning on diverse naturalistic movies allows the model to replicate psychophysical and physiological findings about first-order (luminance-based) motion perception. 
+            For second-order motion, inspired by neuroscientific findings, the model includes an additional sensing pathway with nonlinear preprocessing before motion energy sensing, 
+            implemented using a simple multi-layer 3D CNN block. 
+            To explore how the brain naturally acquires second-order motion perception in natural environments---where pure second-order signals are rare---we hypothesized 
+            that second-order mechanisms are critical for estimating robust object motion amidst optical fluctuations, such as highlights on glossy surfaces. 
+            We trained our dual-pathway model on novel motion datasets with varying material properties of moving objects and found that 
+            training to estimate motion for non-Lambertian materials naturally endowed the model with the ability to perceive second-order motion, 
+            akin to humans. The resulting model effectively aligns with biological systems while generalizing to both first- and second-order motion phenomena in natural scenes.
           </p>
         </div>
       </div>
