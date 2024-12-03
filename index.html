@@ -207,25 +207,29 @@
 
 <section class="section">
   <div class="container has-text-centered">
-    <!-- 单个 GIF -->
+    <!-- 单个 MP4 视频 -->
     <figure>
-      <img src="./static/1_intro.gif" alt="Animation 1" class="gif-image">
+      <video class="video-element" autoplay loop muted playsinline>
+        <source src="./data_for_website/1_intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <figcaption>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
         such as dynamic interaction between robots and the environment and autonomous driving assistance.
-</figcaption>
+      </figcaption>
     </figure>
   </div>
 </section>
 
 <style>
-  /* GIF 图片样式 */
-  .gif-image {
+  /* 视频样式 */
+  .video-element {
     width: 90vw; /* 占据视口宽度的90% */
-    height: auto; /* 保持图片宽高比 */
+    height: auto; /* 保持视频宽高比 */
     margin: 0 auto; /* 水平居中 */
+    display: block;
   }
 
-  /* 调整图片说明的样式 */
+  /* 调整视频说明的样式 */
   figcaption {
     font-size: 1em;
     margin-top: 10px;
@@ -233,6 +237,7 @@
     text-align: center;
   }
 </style>
+
 
 
 
