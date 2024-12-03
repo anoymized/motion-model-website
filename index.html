@@ -226,24 +226,6 @@
 
 
 
-<style>
-  /* 调整GIF图像的样式 */
-  .gif-image {
-    width: 90vw; /* 确保图片适应列宽 */
-    height: auto; /* 保持图片宽高比 */
-  }
-
-  /* 左侧文字部分样式优化 */
-  .content {
-    margin-top: 1em; /* 调整顶部间距 */
-  }
-
-  /* 调整文字与图像在垂直方向上的对齐 */
-  .columns.is-vcentered {
-    align-items: center;
-  }
-</style>
-
 
   <style>
   /* 视频样式 */
@@ -281,22 +263,54 @@
 
 
 
-
-<hr class="section-divider">
-   <!--2 - current gap -1  -->
-  <section class="section">
-  <div class="container has-text-centered">
-    <!-- 单个 GIF -->
-    <figure>
-      <img src="./data_for_website/2_gap_1.gif" alt="Animation 1" class="gif-image">
-      <figcaption>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
-        such as dynamic interaction between robots and the environment and autonomous driving assistance. The current CV models has large difference and GAP to human perception.
-</figcaption>
-    </figure>
-  </div>
-</section>
   
 
+<section class="section">
+  <div class="container">
+    <!-- 使用 Columns 布局 -->
+    <div class="columns is-vcentered">
+      <!-- 左侧文字部分 -->
+      <div class="column is-half content has-text-right">
+        <p>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
+          such as dynamic interaction between robots and the environment and autonomous driving assistance.
+        </p>
+      </div>
+      <!-- 右侧 GIF 图片 -->
+      <div class="column is-half">
+        <figure>
+         <img src="./data_for_website/2_gap_1.gif" alt="Animation 1" class="gif-image">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 调整 GIF 图像的样式 */
+  .gif-image {
+    width: 100%; /* 确保图片宽度占满右侧列 */
+    height: auto; /* 保持图片宽高比 */
+    max-width: 60vw; /* 限制最大宽度 */
+  }
+
+  /* 左侧文字部分样式 */
+  .content {
+    margin-top: 1em; /* 顶部间距 */
+    font-size: 1em; /* 调整文字大小 */
+    color: #555; /* 文字颜色 */
+  }
+
+  /* Columns 对齐方式 */
+  .columns.is-vcentered {
+    align-items: center; /* 垂直方向居中 */
+  }
+
+  /* 右侧图片列 */
+  .column.is-half figure {
+    margin: 0; /* 移除默认间距 */
+    text-align: center; /* 图片水平居中 */
+  }
+</style>
 
   
   
