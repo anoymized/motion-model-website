@@ -245,21 +245,58 @@
 </style>
 
 
+  <style>
+  /* 视频样式 */
+  .video-element {
+    width: 90vw; /* 占据视口宽度的90% */
+    height: auto; /* 保持视频宽高比 */
+    margin: 0 auto; /* 水平居中 */
+    display: block;
+  }
+
+  /* 调整视频说明的样式 */
+  figcaption {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #555;
+    text-align: center;
+  }
+</style>
+
 <hr class="section-divider">
-<!-- Teaser 主视频展示 -->
-<section class="hero teaser">
-   <h2 class="subtitle has-text-centered overlay-text">
-    Several representative computer vision models and human-inspired models for motion estimation were tested on our human benchmark. 
-    Here, we select the <a href="https://playing-for-benchmarks.org/download/">VIPER Benchmark</a>  and  <a href="http://sintel.is.tue.mpg.de/">MPI-Sintel Benchmark</a> as demonstrations.
-    The red, yellow, and blue arrows represent human perception, computer vision (CV) models, and ground truth (GT), respectively. We introduce the Relative Consistency Index (RCI) to illustrate each model's ability to align with human perception (i.e., human bias that differs from GT). The yellow circle denotes this alignment; a larger circle indicates that the CV model's response is closer to human perception than to GT. Overall, we found that basic human-aligned computations, such as models based on motion energy calculations, capture human illusions of motion more effectively than state-of-the-art CV models.
-  </h2>
-  <video id="teaser" autoplay muted loop playsinline class="scaled-video">
-    <source src="./data_for_website/1_intro.mp4" type="video/mp4">
-     Your browser does not support the video tag.
-  </video>
-  
- 
+  <section class="section">
+  <div class="container has-text-centered">
+   
+    <figure>
+      <video class="video-element" autoplay loop muted playsinline>
+        <source src="./data_for_website/1_intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
+        such as dynamic interaction between robots and the environment and autonomous driving assistance.
+      </figcaption>
+    </figure>
+  </div>
 </section>
+
+
+
+
+<hr class="section-divider">
+   <!--2 - current gap -1  -->
+  <section class="section">
+  <div class="container has-text-centered">
+    <!-- 单个 GIF -->
+    <figure>
+      <img src="./data_for_website/2_gap_1.gif" alt="Animation 1" class="gif-image">
+      <figcaption>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
+        such as dynamic interaction between robots and the environment and autonomous driving assistance. The current CV models has large difference and GAP to human perception.
+</figcaption>
+    </figure>
+  </div>
+</section>
+  
+
 
   
   
