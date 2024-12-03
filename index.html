@@ -254,7 +254,7 @@
 
   /* 调整视频说明的样式 */
   figcaption {
-    font-size: 1.3em; /* 调整字体大小 */
+    font-size: 1.5em; /* 调整字体大小 */
     margin-bottom: 10px; /* 与视频间距 */
     color: #555; /* 文本颜色 */
     text-align: left; /* 左对齐文字 */
@@ -356,8 +356,9 @@
   <section class="section">
   <div class="container has-text-centered">
     <figure>
-      <figcaption>Second-order motion is an essential function for living things to interact with the world and has a wide range of application areas, 
-        such as dynamic interaction between robots and the environment and autonomous driving assistance.
+      <figcaption> Visual motion perception and estimation is an essential function for living things or AI agent to interact with this dynamic world , 
+        as it supports essential tasks such as navigation, tracking, prediction, and pursuit.
+
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
         <source src="./data_for_website/1_intro.mp4" type="video/mp4">
@@ -377,6 +378,22 @@
       <!-- 左侧视频部分 -->
       <div class="column is-half">
         <figure>
+       <figcaption> Recent advances in deep learning have propelled machine vision capabilities to a level comparable or superior to human performance in
+                  many vision tasks. Visual motion estimation is not an exception; state-of-the-art (SOTA)
+                  computer vision (CV) models based on deep
+                  learning has demonstrated higher accuracy than
+                  that of humans in computing ground-truth optical flow from images. However, these models
+                  are not sufficiently human-aligned. Strutruclly, human motion perception Involves a complicated spatiotemporal dynamic process, but the current CV models mainly focus on the correspondence tracking between two frames.
+                  the different design purpose also let cv models somehow ignore neurophysiological plausibility.
+         
+                  Perceptually, CV models being unable
+                  to predict human motion perception in many
+                  aspects. For example, CV models are often unstable under various experimental conditions,
+                  fail to reproduce human visual illusions, and do
+                  not fully capture the biases inherent in human
+                  perception. See left two examples of the motion integration with depth cues and mario reverse-phi illusion.
+
+          
           <video class="video-element" autoplay loop muted playsinline>
             <source src="./data_for_website/2_gap_1.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -385,8 +402,7 @@
       </div>
       <!-- 右侧文字部分 -->
       <div class="column is-half content">
-        <p>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
-          such as dynamic interaction between robots and the environment and autonomous driving assistance.
+        <p> .
         </p>
       </div>
     </div>
@@ -398,8 +414,23 @@
   <section class="section">
   <div class="container has-text-centered">
     <figure>
-      <figcaption>Second-order motion is an essential function for living things to interact with the world and has a wide range of application areas, 
-        such as dynamic interaction between robots and the environment and autonomous driving assistance.
+      <figcaption>
+        Among the varios Gap between CV models and humans, one of the significant gap is about second-order motion processing and perception. As shown below,
+        We humans have a similar perception of the moving speed and direction of these two stimuli. However, they have different characteristics in frequency space.
+A simple clarification is that if you carry out the Fourier Transformation of their spatiotemporal map, you will find the first-order motion has  asymmetric energy in the Fourier Space 
+But the second-order motion doesn’t exhibit any visible or meaningful energy in Fourier Space, which means that it’s not detectable by the classical Fourier analysis.
+
+        From mechiasm, human use differnt mechiems or channls to processing the second-order motion while the CV models didnt consider that. 
+        From response, its also obvous that the CV model failed to capture this type of motion and generate noise-like response. The reason is,most CV models primarily focus on tracking explicit
+pixel correspondences between frames, relying
+mainly on brightness consistency. Most
+second-order motions, such as drift-balanced
+motion, lack such deterministic correspondences across frames,
+leading current machine vision models to become
+unstable and generate noise, even they trained sufficiently on this types of motions.
+
+        
+
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
         <source src="./data_for_website/2_gap_2.mp4" type="video/mp4">
@@ -446,13 +477,20 @@
 
 
 <hr class="gradient-divider">
-<h2 class="title is-3">     Model Design</h2>
+<h2 class="title is-3">     Two-Stages-Dual-Channel Model Design</h2>
 <section class="section">
   <div class="container">
     <!-- 图像及文字说明 -->
     <figure class="image-container">
-      <figcaption>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
-        such as dynamic interaction between robots and the environment and autonomous driving assistance.
+      <figcaption>
+        Our prototype model features two-stage motion processing that combines classical ME sensors in Stage I with modern DNNs in Stage II. 
+        Stage I captures local ME, simulating the function of the V1 area. In contrast, Stage II focuses on global motion integration and segregation and thus simulates the primary function of the MT area.
+         The red route in Fig below is that of classical first-order motion. Specifically, we built 256 trainable ME units, each with a quadrature 2D Gabor spatial filter and a quadrature temporal filter. 
+        These captured the spatiotemporal motion energies of input videos within a multi-scale wavelet space. The motion energy channel is limited to capturing first-order motion. To enable the extraction
+        of higher-order motion information, we introduce an alternative channel, depicted by the gray
+        route in Fig below, which uses multi-layer 3D
+        CNNs ahead of motion energy computation to
+        extract nonlinear spatiotemporal features. Such design is Inspired by earlier studies on human vision suggesting separate processing mechanisms for first- and second-order motion.
       </figcaption>
       <img src="./data_for_website/3_model_1.png"  class="image-element">
     </figure>
