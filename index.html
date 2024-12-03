@@ -224,6 +224,24 @@
   }
 </style>
 
+<style>
+  /* 视频样式 */
+  .video-rec {
+    width: 60vw; /* 占据视口宽度的90% */
+    height: auto; /* 保持视频宽高比 */
+    margin: 0 auto; /* 水平居中 */
+    display: block;
+  }
+
+  /* 调整视频说明的样式 */
+  figcaption {
+    font-size: 1.3em;
+    margin-top: 10px;
+    color: #555;
+    text-align: center;
+  }
+</style>
+
 
 <style>
   /* 视频样式 */
@@ -258,6 +276,34 @@
 </style>
 
 
+<style>
+  /* 图像样式 */
+  .image-element {
+    width: 90vw; /* 占据视口宽度的90% */
+    height: auto; /* 保持图像宽高比 */
+    margin: 0 auto; /* 水平居中 */
+    display: block;
+  }
+
+  /* 调整图像说明的样式 */
+  .caption-text {
+    max-width: 90vw; /* 限制文字宽度与图像一致 */
+    font-size: 1.3em; /* 调整字体大小 */
+    margin-bottom: 10px; /* 与图像的间距 */
+    color: #555; /* 文字颜色 */
+    text-align: left; /* 左对齐文字 */
+    word-wrap: break-word; /* 防止文字超出范围 */
+    overflow-wrap: break-word; /* 增强兼容性 */
+  }
+
+  /* 图像容器样式 */
+  .image-container {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    text-align: center; /* 容器内文字居中 */
+  }
+</style>
 
 <style>
   /* 视频样式 */
@@ -291,9 +337,9 @@
   }
 </style>
 
-
-
-   <section class="section">
+<h2 class="title is-3">Introduction</h2>
+  
+  <section class="section">
   <div class="container has-text-centered">
     <figure>
       <figcaption>Second-order motion is an essential function for living things to interact with the world and has a wide range of application areas, 
@@ -301,14 +347,14 @@
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
         <source src="./data_for_website/1_intro.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Your browser does not support video tags.
       </video>
       
     </figure>
   </div>
 </section>
 
-
+<hr class="section-divider">
   
 <section class="section">
   <div class="container">
@@ -353,36 +399,8 @@
 
 
 
-<style>
-  /* 图像样式 */
-  .image-element {
-    width: 90vw; /* 占据视口宽度的90% */
-    height: auto; /* 保持图像宽高比 */
-    margin: 0 auto; /* 水平居中 */
-    display: block;
-  }
 
-  /* 调整图像说明的样式 */
-  .caption-text {
-    max-width: 90vw; /* 限制文字宽度与图像一致 */
-    font-size: 1.3em; /* 调整字体大小 */
-    margin-bottom: 10px; /* 与图像的间距 */
-    color: #555; /* 文字颜色 */
-    text-align: left; /* 左对齐文字 */
-    word-wrap: break-word; /* 防止文字超出范围 */
-    overflow-wrap: break-word; /* 增强兼容性 */
-  }
-
-  /* 图像容器样式 */
-  .image-container {
-    display: flex;
-    flex-direction: column; /* 垂直排列 */
-    align-items: center; /* 水平居中 */
-    text-align: center; /* 容器内文字居中 */
-  }
-</style>
-
-
+<hr class="section-divider">
 <hr class="section-divider">
   <!-- 摘要部分 -->
 <section class="section">
@@ -601,23 +619,25 @@
 
   
 
+  <hr class="section-divider">
+  <section class="section">
+  <div class="container has-text-centered">
+    <figure>
+      <figcaption>Second-order motion is an essential function for living things to interact with the world and has a wide range of application areas, 
+        such as dynamic interaction between robots and the environment and autonomous driving assistance.
+      </figcaption>
+      <video class="video-rec" autoplay loop muted playsinline>
+        <source src="./data_for_website/5_conclu.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+    </figure>
+  </div>
+</section>
 
 
 <hr class="section-divider">
-<!-- Teaser 主视频展示 -->
-<section class="hero teaser">
-  <h2 class="subtitle has-text-centered overlay-text">
-    Several representative computer vision models and human-inspired models for motion estimation were tested on our human benchmark. 
-    Here, we select the <a href="https://playing-for-benchmarks.org/download/">VIPER Benchmark</a>  and  <a href="http://sintel.is.tue.mpg.de/">MPI-Sintel Benchmark</a> as demonstrations.
-    The red, yellow, and blue arrows represent human perception, computer vision (CV) models, and ground truth (GT), respectively. We introduce the Relative Consistency Index (RCI) to illustrate each model's ability to align with human perception (i.e., human bias that differs from GT). The yellow circle denotes this alignment; a larger circle indicates that the CV model's response is closer to human perception than to GT. Overall, we found that basic human-aligned computations, such as models based on motion energy calculations, capture human illusions of motion more effectively than state-of-the-art CV models.
-  </h2>
- <video class="video-element" autoplay loop muted playsinline>
-    <source src="./data_for_website/5_conclu.mp4" type="video/mp4">
-     Your browser does not support the video tag.
-  </video>
 
-  
-</section>
 
 
   <hr class="section-divider">
