@@ -350,19 +350,8 @@
   </div>
 </section>
 
-<hr class="section-divider">
 
-<section class="section">
-  <div class="container">
-    <!-- 图像及文字说明 -->
-    <figure class="image-container">
-      <figcaption class="caption-text">Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
-        such as dynamic interaction between robots and the environment and autonomous driving assistance.
-      </figcaption>
-      <img src="./static/1_intro.png" alt="Motion Estimation Illustration" class="image-element">
-    </figure>
-  </div>
-</section>
+
 
 <style>
   /* 图像样式 */
@@ -394,7 +383,36 @@
 </style>
 
 
-
+<hr class="section-divider">
+  <!-- 摘要部分 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- 论文摘要内容，可以自行替换 -->
+          <p>
+           The objective of this study is to develop machines that naturally learn to perceive visual motion as humans do. 
+            While recent advances in computer vision (CV) have enabled DNN-based models to accurately estimate optical flow in naturalistic images, 
+            a significant disparity remains between CV models and the biological visual system in both architecture and behavior. 
+            This disparity includes humans' ability to perceive the motion of higher-order image features (second-order motion), 
+            which many CV models fail to capture due to their reliance on the intensity conservation law. 
+            Our model architecture mimics the cortical V1-MT motion processing pathway, utilizing a trainable motion energy sensor bank and a recurrent self-attention network. 
+            Supervised learning on diverse naturalistic movies allows the model to replicate psychophysical and physiological findings about first-order (luminance-based) motion perception. 
+            For second-order motion, inspired by neuroscientific findings, the model includes an additional sensing pathway with nonlinear preprocessing before motion energy sensing, 
+            implemented using a simple multi-layer 3D CNN block. 
+            To explore how the brain naturally acquires second-order motion perception in natural environments---where pure second-order signals are rare---we hypothesized 
+            that second-order mechanisms are critical for estimating robust object motion amidst optical fluctuations, such as highlights on glossy surfaces. 
+            We trained our dual-pathway model on novel motion datasets with varying material properties of moving objects and found that 
+            training to estimate motion for non-Lambertian materials naturally endowed the model with the ability to perceive second-order motion, 
+            akin to humans. The resulting model effectively aligns with biological systems while generalizing to both first- and second-order motion phenomena in natural scenes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -540,7 +558,7 @@
     text-align: center;
   }
   .is-size-5 {
-    font-size: 1.25rem;
+    font-size: 1.3em;
   }
   .mb-4 {
     margin-bottom: 1.5rem;
@@ -582,52 +600,23 @@
 </section>
 
   
-<hr class="section-divider">
-  <!-- 摘要部分 -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- 论文摘要内容，可以自行替换 -->
-          <p>
-           The objective of this study is to develop machines that naturally learn to perceive visual motion as humans do. 
-            While recent advances in computer vision (CV) have enabled DNN-based models to accurately estimate optical flow in naturalistic images, 
-            a significant disparity remains between CV models and the biological visual system in both architecture and behavior. 
-            This disparity includes humans' ability to perceive the motion of higher-order image features (second-order motion), 
-            which many CV models fail to capture due to their reliance on the intensity conservation law. 
-            Our model architecture mimics the cortical V1-MT motion processing pathway, utilizing a trainable motion energy sensor bank and a recurrent self-attention network. 
-            Supervised learning on diverse naturalistic movies allows the model to replicate psychophysical and physiological findings about first-order (luminance-based) motion perception. 
-            For second-order motion, inspired by neuroscientific findings, the model includes an additional sensing pathway with nonlinear preprocessing before motion energy sensing, 
-            implemented using a simple multi-layer 3D CNN block. 
-            To explore how the brain naturally acquires second-order motion perception in natural environments---where pure second-order signals are rare---we hypothesized 
-            that second-order mechanisms are critical for estimating robust object motion amidst optical fluctuations, such as highlights on glossy surfaces. 
-            We trained our dual-pathway model on novel motion datasets with varying material properties of moving objects and found that 
-            training to estimate motion for non-Lambertian materials naturally endowed the model with the ability to perceive second-order motion, 
-            akin to humans. The resulting model effectively aligns with biological systems while generalizing to both first- and second-order motion phenomena in natural scenes.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 <hr class="section-divider">
 <!-- Teaser 主视频展示 -->
 <section class="hero teaser">
-  <video id="teaser" autoplay muted loop playsinline class="scaled-video">
-    <source src="./data_for_website/5_conclu.mp4" type="video/mp4">
-     Your browser does not support the video tag.
-  </video>
-
-  
   <h2 class="subtitle has-text-centered overlay-text">
     Several representative computer vision models and human-inspired models for motion estimation were tested on our human benchmark. 
     Here, we select the <a href="https://playing-for-benchmarks.org/download/">VIPER Benchmark</a>  and  <a href="http://sintel.is.tue.mpg.de/">MPI-Sintel Benchmark</a> as demonstrations.
     The red, yellow, and blue arrows represent human perception, computer vision (CV) models, and ground truth (GT), respectively. We introduce the Relative Consistency Index (RCI) to illustrate each model's ability to align with human perception (i.e., human bias that differs from GT). The yellow circle denotes this alignment; a larger circle indicates that the CV model's response is closer to human perception than to GT. Overall, we found that basic human-aligned computations, such as models based on motion energy calculations, capture human illusions of motion more effectively than state-of-the-art CV models.
   </h2>
+ <video class="video-element" autoplay loop muted playsinline>
+    <source src="./data_for_website/5_conclu.mp4" type="video/mp4">
+     Your browser does not support the video tag.
+  </video>
+
+  
 </section>
 
 
