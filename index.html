@@ -237,6 +237,7 @@
     margin-top: 1em; /* 顶部间距 */
     font-size: 1.3em; /* 调整文字大小 */
     color: #555; /* 文字颜色 */
+    text-align: left; /* 图片水平居中 */
   }
 
   /* Columns 对齐方式 */
@@ -247,7 +248,7 @@
   /* 右侧图片列 */
   .column.is-half figure {
     margin: 0; /* 移除默认间距 */
-    text-align: right; /* 图片水平居中 */
+    text-align: left; /* 图片水平居中 */
   }
 </style>
 
@@ -317,19 +318,20 @@
 </style>
 
 
-<section class="section">
-<div class="container">
-  <!-- 视频及文字说明 -->
-  <figure class="video-container">
-    <figcaption>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
-      such as dynamic interaction between robots and the environment and autonomous driving assistance.
-    </figcaption>
-    <video class="video-element" autoplay loop muted playsinline>
-      <source src="./data_for_website/1_intro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </figure>
-</div>
+
+   <section class="section">
+  <div class="container has-text-centered">
+    <figure>
+      <figcaption>Second-order motion is an essential function for living things to interact with the world and has a wide range of application areas, 
+        such as dynamic interaction between robots and the environment and autonomous driving assistance.
+      </figcaption>
+      <video class="video-element" autoplay loop muted playsinline>
+        <source src="./data_for_website/1_intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+    </figure>
+  </div>
 </section>
 
 
