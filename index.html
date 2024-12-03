@@ -224,65 +224,39 @@
   }
 </style>
 
+
 <style>
-  /* 调整 GIF 图像的样式 */
-  .gif-image {
-    width: 100%; /* 确保图片宽度占满右侧列 */
-    height: auto; /* 保持图片宽高比 */
-    max-width: 75vw; /* 限制最大宽度 */
-  }
-
-  /* 左侧文字部分样式 */
-  .content {
-    margin-top: 1em; /* 顶部间距 */
-    font-size: 1.3em; /* 调整文字大小 */
-    color: #555; /* 文字颜色 */
-    text-align: left; /* 图片水平居中 */
-  }
-
-  /* Columns 对齐方式 */
-  .columns.is-vcentered {
-    align-items: center; /* 垂直方向居中 */
-  }
-
-  /* 右侧图片列 */
-  .column.is-half figure {
-    margin: 0; /* 移除默认间距 */
-    text-align: left; /* 图片水平居中 */
-  }
-</style>
-
-  <style>
-  /* 图像样式 */
-  .image-element {
-    width: 95vw; /* 占据视口宽度的90% */
-    height: auto; /* 保持图像宽高比 */
+  /* 视频样式 */
+  .video-left {
+    width: 90vw; /* 占据视口宽度的90% */
+    height: auto; /* 保持视频宽高比 */
     margin: 0 auto; /* 水平居中 */
     display: block;
   }
 
-  /* 调整图像说明的样式 */
+  /* 调整视频说明的样式 */
   figcaption {
     font-size: 1.3em; /* 调整字体大小 */
-    margin-bottom: 10px; /* 与图像的间距 */
-    color: #555; /* 文字颜色 */
+    margin-bottom: 10px; /* 与视频间距 */
+    color: #555; /* 文本颜色 */
     text-align: left; /* 左对齐文字 */
   }
 
-  /* 图像容器样式 */
-  .image-container {
+  /* 视频容器样式 */
+  .video-container {
     display: flex;
     flex-direction: column; /* 垂直排列 */
     align-items: center; /* 水平居中 */
     text-align: center; /* 容器内文字居中 */
   }
 
-  /* 确保文字宽度与图像一致 */
-  .image-container figcaption {
-    width: 95vw; /* 与图像宽度一致 */
+  /* 确保文字宽度与视频一致 */
+  .video-container figcaption {
+    width: 90vw; /* 与视频宽度一致 */
     margin: 0 auto 10px auto; /* 保持水平居中 */
   }
 </style>
+
 
 
 <style>
@@ -336,26 +310,29 @@
 
 
   
-<hr class="section-divider">
 <section class="section">
   <div class="container">
     <!-- 使用 Columns 布局 -->
     <div class="columns is-vcentered">
-      <!-- 左侧文字部分 -->
-      <div class="column is-half content has-text-right">
+      <!-- 左侧视频部分 -->
+      <div class="column is-half">
+        <figure>
+          <video class="video-element" autoplay loop muted playsinline>
+            <source src="./data_for_website/2_gap_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+      <!-- 右侧文字部分 -->
+      <div class="column is-half content">
         <p>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
           such as dynamic interaction between robots and the environment and autonomous driving assistance.
         </p>
       </div>
-      <!-- 右侧 GIF 图片 -->
-      <div class="column is-half">
-        <figure>
-         <img src="./data_for_website/2_gap_1.gif" alt="Animation 1" class="gif-image">
-        </figure>
-      </div>
     </div>
   </div>
 </section>
+
 
 
   <section class="section">
@@ -375,18 +352,47 @@
 
 <hr class="section-divider">
 
-  
 <section class="section">
-   <div class="container has-text-centered">
+  <div class="container">
     <!-- 图像及文字说明 -->
     <figure class="image-container">
-      <figcaption>Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
-        such as dynamic interaction between robots and the environment and autonomous driving assistance. We contruct our first -dual channel design to processing the first and secon-order motion perception
+      <figcaption class="caption-text">Motion estimation is an essential function for living things to interact with the world and has a wide range of application areas, 
+        such as dynamic interaction between robots and the environment and autonomous driving assistance.
       </figcaption>
-      <img src="./data_for_website/3_model_1.png" alt="Motion Estimation Illustration" class="image-element">
+      <img src="./static/1_intro.png" alt="Motion Estimation Illustration" class="image-element">
     </figure>
   </div>
 </section>
+
+<style>
+  /* 图像样式 */
+  .image-element {
+    width: 90vw; /* 占据视口宽度的90% */
+    height: auto; /* 保持图像宽高比 */
+    margin: 0 auto; /* 水平居中 */
+    display: block;
+  }
+
+  /* 调整图像说明的样式 */
+  .caption-text {
+    max-width: 90vw; /* 限制文字宽度与图像一致 */
+    font-size: 1.3em; /* 调整字体大小 */
+    margin-bottom: 10px; /* 与图像的间距 */
+    color: #555; /* 文字颜色 */
+    text-align: left; /* 左对齐文字 */
+    word-wrap: break-word; /* 防止文字超出范围 */
+    overflow-wrap: break-word; /* 增强兼容性 */
+  }
+
+  /* 图像容器样式 */
+  .image-container {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    text-align: center; /* 容器内文字居中 */
+  }
+</style>
+
 
 
 
