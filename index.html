@@ -369,7 +369,7 @@
          Structurally, human motion perception involves complex spatiotemporal dynamics, whereas current CV models primarily focus on frame-to-frame correspondence. 
          This design prioritization often ignores neurophysiological plausibility. Perceptually, CV models struggle to replicate human motion perception, 
          failing under experimental variations, misinterpreting visual illusions, and overlooking inherent human biases.
-         The right examples illustrate motion integration with depth cues and the Mario reverse-phi illusion.
+         The right examples illustrate motion integration with depth cues and the Mario reverse-phi illusion, results generated from RAFT-sintel.
 
         </figcaption>
       </div>
@@ -479,7 +479,7 @@
     <!-- 图像及文字说明 -->
     <figure class="image-container">
       <figcaption>
-      Our prototype model employs a two-stage motion processing architecture, combining classical motion energy (ME) sensors in Stage I with modern deep neural networks (DNNs) in Stage II.
+      Our prototype model employs a two-stage motion processing architecture, combining classical motion energy (ME) sensors in Stage I with deep neural networks (DNNs) in Stage II.
         Stage I captures local motion energy, mimicking the function of the V1 area, while Stage II handles global motion integration and segregation, simulating the MT area.
 The red route in the figure represents classical first-order motion processing. 
         Specifically, we implemented 256 trainable ME units using quadrature 2D Gabor spatial filters and temporal filters to capture spatiotemporal motion energies within a multi-scale wavelet space. 
@@ -708,12 +708,12 @@ One of the primary goals of the motion perception system is to reliably infer an
 <section class="hero teaser">
   <video id="teaser" autoplay muted loop playsinline class="scaled-video">
     <source src="./data_for_website/6_firsec_2.mp4" type="video/mp4">
-     Your browser does not support the video tag.
+     Your browser does not support video tags.
   </video>
 
   
   <h2 class="subtitle has-text-centered overlay-text">
-   We presented examples from natural environments to support our argument, such as water flowing in a river or a vibrating box with water. 
+   We presented examples from natural environments to support our argument, such as water flowing in a river or a moving box with fluctuating water. 
     While humans perceive the local optical noise caused by fluctuating water, we can also infer the global motion direction of the flow. This ability is closely tied to the functionality of second-order motion perception.
 
 Although isolated second-order motion is rarely observed in nature, it often coexists with first-order motion as optical fluctuations. 
@@ -734,7 +734,7 @@ Although isolated second-order motion is rarely observed in nature, it often coe
 
   
   <h2 class="subtitle has-text-centered overlay-text">
-The figure above illustrates the segmentation results for both natural scenes and pure drift-balanced motion \cite{secondordermotion}. 
+The figure above illustrates the segmentation results for both natural scenes and pure drift-balanced motion. 
     The higher-order channel significantly enhances the model’s ability to identify objects in motion, producing finer segmentation compared to using the first-order channel alone. 
     This advantage becomes particularly evident in noisy environments.
 
