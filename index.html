@@ -227,7 +227,7 @@
 <style>
   /* 视频样式 */
   .video-rec {
-    width: 60vw; /* 占据视口宽度的90% */
+    width: 50vw; /* 占据视口宽度的90% */
     height: auto; /* 保持视频宽高比 */
     margin: 0 auto; /* 水平居中 */
     display: block;
@@ -356,8 +356,9 @@
   <section class="section">
   <div class="container has-text-centered">
     <figure>
-      <figcaption> Visual motion perception and estimation is an essential function for living things or AI agent to interact with this dynamic world , 
-        as it supports essential tasks such as navigation, tracking, prediction, and pursuit.
+      <figcaption> 
+        Visual motion perception and estimation are vital for both living beings and AI agents to navigate and interact with the dynamic world. 
+        These abilities support key tasks such as navigation, tracking, prediction, and pursuit.
 
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
@@ -378,20 +379,13 @@
       <!-- 左侧视频部分 -->
       <div class="column is-half">
         <figure>
-       <figcaption> Recent advances in deep learning have propelled machine vision capabilities to a level comparable or superior to human performance in
-                  many vision tasks. Visual motion estimation is not an exception; state-of-the-art (SOTA)
-                  computer vision (CV) models based on deep
-                  learning has demonstrated higher accuracy than
-                  that of humans in computing ground-truth optical flow from images. However, these models
-                  are not sufficiently human-aligned. Strutruclly, human motion perception Involves a complicated spatiotemporal dynamic process, but the current CV models mainly focus on the correspondence tracking between two frames.
-                  the different design purpose also let cv models somehow ignore neurophysiological plausibility.
-         
-                  Perceptually, CV models being unable
-                  to predict human motion perception in many
-                  aspects. For example, CV models are often unstable under various experimental conditions,
-                  fail to reproduce human visual illusions, and do
-                  not fully capture the biases inherent in human
-                  perception. See left two examples of the motion integration with depth cues and mario reverse-phi illusion.
+       <figcaption> 
+         Recent advances in deep learning have pushed machine vision capabilities to rival or even surpass human performance in many visual tasks, including visual motion estimation. 
+         While state-of-the-art (SOTA) models achieve remarkable accuracy in calculating ground-truth optical flow, they lack alignment with human motion perception. 
+         Structurally, human motion perception involves complex spatiotemporal dynamics, whereas current CV models primarily focus on frame-to-frame correspondence. 
+         This design prioritization often ignores neurophysiological plausibility. Perceptually, CV models struggle to replicate human motion perception, 
+         failing under experimental variations, misinterpreting visual illusions, and overlooking inherent human biases.
+         The left examples illustrate motion integration with depth cues and the Mario reverse-phi illusion.
 
           
           <video class="video-element" autoplay loop muted playsinline>
@@ -415,26 +409,18 @@
   <div class="container has-text-centered">
     <figure>
       <figcaption>
-        Among the varios Gap between CV models and humans, one of the significant gap is about second-order motion processing and perception. As shown below,
-        We humans have a similar perception of the moving speed and direction of these two stimuli. However, they have different characteristics in frequency space.
-A simple clarification is that if you carry out the Fourier Transformation of their spatiotemporal map, you will find the first-order motion has  asymmetric energy in the Fourier Space 
-But the second-order motion doesn’t exhibit any visible or meaningful energy in Fourier Space, which means that it’s not detectable by the classical Fourier analysis.
-
-        From mechiasm, human use differnt mechiems or channls to processing the second-order motion while the CV models didnt consider that. 
-        From response, its also obvous that the CV model failed to capture this type of motion and generate noise-like response. The reason is,most CV models primarily focus on tracking explicit
-pixel correspondences between frames, relying
-mainly on brightness consistency. Most
-second-order motions, such as drift-balanced
-motion, lack such deterministic correspondences across frames,
-leading current machine vision models to become
-unstable and generate noise, even they trained sufficiently on this types of motions.
-
+       Among the many gaps between CV models and human perception, second-order motion processing stands out as a significant challenge. 
+        Humans perceive these two stimuli as having similar speeds and directions, despite their differences in frequency space.
+        Fourier analysis reveals that first-order motion exhibits asymmetric energy in the Fourier domain, 
+        whereas second-order motion lacks detectable energy, making it invisible to classical analysis. Mechanistically, 
+        humans employ distinct processing channels for second-order motion, but CV models fail to account for this.
+        As a result, CV models struggle with such motion, producing noise-like responses due to their reliance on pixel correspondence and brightness consistency—features that second-order motion often lacks.
         
 
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
         <source src="./data_for_website/2_gap_2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Your browser does not support video tags.
       </video>
       
     </figure>
@@ -483,14 +469,13 @@ unstable and generate noise, even they trained sufficiently on this types of mot
     <!-- 图像及文字说明 -->
     <figure class="image-container">
       <figcaption>
-        Our prototype model features two-stage motion processing that combines classical ME sensors in Stage I with modern DNNs in Stage II. 
-        Stage I captures local ME, simulating the function of the V1 area. In contrast, Stage II focuses on global motion integration and segregation and thus simulates the primary function of the MT area.
-         The red route in Fig below is that of classical first-order motion. Specifically, we built 256 trainable ME units, each with a quadrature 2D Gabor spatial filter and a quadrature temporal filter. 
-        These captured the spatiotemporal motion energies of input videos within a multi-scale wavelet space. The motion energy channel is limited to capturing first-order motion. To enable the extraction
-        of higher-order motion information, we introduce an alternative channel, depicted by the gray
-        route in Fig below, which uses multi-layer 3D
-        CNNs ahead of motion energy computation to
-        extract nonlinear spatiotemporal features. Such design is Inspired by earlier studies on human vision suggesting separate processing mechanisms for first- and second-order motion.
+      Our prototype model employs a two-stage motion processing architecture, combining classical motion energy (ME) sensors in Stage I with modern deep neural networks (DNNs) in Stage II.
+        Stage I captures local motion energy, mimicking the function of the V1 area, while Stage II handles global motion integration and segregation, simulating the MT area.
+The red route in the figure represents classical first-order motion processing. 
+        Specifically, we implemented 256 trainable ME units using quadrature 2D Gabor spatial filters and temporal filters to capture spatiotemporal motion energies within a multi-scale wavelet space. 
+        This channel is specialized for first-order motion.
+To process higher-order motion, we introduced an alternative pathway, depicted by the gray route, which employs multi-layer 3D CNNs before motion energy computation. 
+        This design draws inspiration from human vision research, which suggests distinct mechanisms for first- and second-order motion processing.
       </figcaption>
       <img src="./data_for_website/3_model_1.png"  class="image-element">
     </figure>
@@ -506,7 +491,7 @@ unstable and generate noise, even they trained sufficiently on this types of mot
         The second stage, which mimics the middle temporal cortex (MT), addresses motion integration and segregation. 
         We introduce a graph network to construct a motion graph of a dynamic scene, enabling flexible connections between local motion elements and recurrent global motion integration. 
         Efficient motion integration aside, the motion graph implicitly encodes object interconnections in a graph topology. 
-        Training-free graph cuts\cite{shi2000normalized} can be seamlessly applied for object-level segmentation. See below for The demo of the inferred motion flow field and instance generate from the the motion grah.
+        Training-free graph cuts can be seamlessly applied for object-level segmentation. See below for The demo of the inferred motion flow field and instance generate from the the motion grah.
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
         <source src="./data_for_website/3_model_2.mp4" type="video/mp4">
@@ -524,18 +509,18 @@ unstable and generate noise, even they trained sufficiently on this types of mot
   <div class="container has-text-centered">
     <figure>
       <figcaption>
-        For second-order motion part, Given the computational power of neural networks, 
-        the modified model was expected to detect second-order motion after training on an adequate number of artificial, 
-        second-order motion stimuli. However, such training is unrealistic in natural environments, where pure second-order motions are rarely observed. 
-        The critical scientific question is how and why the biological visual system naturally acquires the ability to perceive second-order motion. 
-         We hypothesized that second-order motion perception aided the estimation of the motion of objects exhibiting different material properties.
-        Before diving into our argument,  offer some demos of the different materials and their optical properties.
-        As you can see video below, different reflection and transmission properties will cause different optical trajectories, such as diffuse, transmission, and specular.
-        If you look in detail at the object’s surface, you will find that material with diffuse reflection shows a reliable optical flow.
-This is because they follow the constant brightness assumption, and local brightness shifts closely correspond to the actual object’s motion. First-order motion detectors can effectively capture such shifts.
+      Given the computational capabilities of neural networks, it is theoretically feasible for a modified model to detect second-order motion after sufficient training on artificial second-order motion stimuli. 
+        However, such training is impractical in natural environments where pure second-order motion rarely occurs. This raises a critical scientific question: 
+        How and why does the biological visual system naturally acquire the ability to perceive second-order motion?
 
-However, when materials with non-diffuse reflections, such as transmission or specular, would generate unpredictable optical turbulence or noise on the surface. 
-In this case, the local luminance shifts are not yet trustable to infer the object motion, which will challenge the first-order motion system. However, we humans still can correctly perceive the movement of these non-diffuse objects. Our assumption is that the vision system may employ some higher-order motion processing, like second-order motion perception, to help estimate the object motion despite optical turbulence.
+We hypothesize that second-order motion perception assists in estimating the motion of objects with varying material properties.
+       
+        As shown in the video below, materials have distinct reflection and transmission characteristics, such as diffuse, transmission, and specular.
+Diffuse materials exhibit reliable luminance flow due to adherence to the constant brightness assumption.
+        Local brightness shifts in these materials closely correspond to actual object motion, enabling effective detection by first-order motion detectors.
+In contrast, materials with non-diffuse reflections, such as those with transmission or specular properties, generate unpredictable optical turbulence or noise on the surface. 
+        These disturbances disrupt local luminance shifts, making them unreliable for inferring object motion and challenging first-order motion systems. Despite this, humans can accurately perceive the motion of non-diffuse objects. 
+        We propose that the human visual system compensates for this limitation by employing higher-order motion processing, such as second-order motion perception, to estimate object motion even in the presence of optical turbulence.
 
 
       </figcaption>
@@ -552,15 +537,10 @@ In this case, the local luminance shifts are not yet trustable to infer the ob
   <div class="container has-text-centered">
     <figure>
       <figcaption>
-        To test the hypothesis, we rendered a new motion dataset with different materials, 
-        We generate a large motion dataset that separates the material’s properties into two groups: diffuse material and non-diffuse material. 
-
-Our critical strategy is to simulate a biological agent/ model that learns or interacts in different environments; we can verify whether the properties of materials have an influence on second-order motion perception.
-        We used supervised training to let the model learn to estimate the object motion in diffuse and non-diffuse digital videos, 
-We provide the label of the object's motion and ignore its local optical turbulence. We train the model until it converges.
-        Visually, it shows that our agent trained on a non-diffuse dataset can perceive second-order motion like human beings. 
-        That may indicate that the training to recognize the motion of non-diffuse objects can trigger the model naturally recognizing the second-order motion.
-
+        To test our hypothesis, we created a motion dataset with materials categorized into diffuse and non-diffuse groups.
+        This dataset simulates a biological agent interacting in diverse environments, allowing us to investigate whether material properties influence second-order motion perception.
+        After supervised training on videos with labeled object motion, the model learned to disregard optical turbulence and accurately detect motion in non-diffuse materials.
+        Notably, agents trained on non-diffuse datasets demonstrated human-like second-order motion perception, suggesting that exposure to such stimuli naturally facilitates second-order motion recognition.
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
         <source src="./data_for_website/4_dataset_2.mp4" type="video/mp4">
@@ -576,11 +556,9 @@ We provide the label of the object's motion and ignore its local optical turbule
   <div class="container has-text-centered">
     <figure>
       <figcaption>
-        In the next step, we would like to quantify the ability of the second-order motion perception.
-To achieve this goal, we will compare the motion estimation performance between humans and models on the same datasets.
-But, currently, there is no second-order motion dataset with diverse samples and abunt scenes or situation for second-order motion. 
-Therefore, we created a standard dataset that incorporates second-order motion into naturalistic backgrounds, and we designed several types of realistic modulations.  Such as water wave dynamics and swirl modulation, as we show below.
-        
+       Our next step is to quantify the ability of second-order motion perception by comparing motion estimation performance between humans and models using the same datasets.
+        However, no standard dataset currently provides diverse and realistic second-order motion samples. 
+        To address this, we developed a novel dataset that integrates second-order motion into naturalistic backgrounds with various modulations, including water wave dynamics and swirl patterns, as shown in the video.     
       </figcaption>
       <video class="video-rec" autoplay loop muted playsinline>
         <source src="./data_for_website/4_dataset_3.mp4" type="video/mp4">
@@ -680,15 +658,13 @@ Therefore, we created a standard dataset that incorporates second-order motion i
   <div class="container has-text-centered">
     <figure>
       <figcaption>
-        Based on this second-order dataset, we employ our psychophysical method to collect human-perceived second-order motion vectors.
-Let me show some demo trials here: Human subjects need seat in front of the monitor to use the mouse to control the moving noise to match the second-order motion they perceived.
-        The stimlie will reprete multiple times to let sufficient time for inference
-Three  Our psychophysical experiment revealed a strong correlation between 
-        the physical GT and the human response in terms of detecting second-order motion $(r_{mean}=0.983, sd=0.005)$ (Fig. \ref{fsecdata}-C). 
-        In contrast, a representative CV model, RAFT, was associated with a much lower correlation $(r=0.102)$,
-        this can not be improved enven trained on our non-diffuse dataset since the sturctue limitaion of CV models.  
-        Instead, Training of our dual-channel model using non-diffuse materials substantially improved recognition of second-order motion.
-        The average correlation was $0.902$, very close to that of human perceptional data 
+       Using this second-order dataset, we employed a psychophysical method to collect human-perceived second-order motion vectors.
+        In our experiment, participants sat in front of a monitor and used a mouse to control moving noise, aligning it with the second-order motion they perceived. 
+        Stimuli were repeated multiple times to allow sufficient time for inference.
+
+Our results revealed a strong correlation between the physical ground truth (GT) and human responses in detecting second-order motion (r=0.983, SD=0.005). 
+        In contrast, the correlation for a representative CV model, RAFT, was much lower (r=0.102) and remained unimproved even after training on the non-diffuse dataset due to structural limitations. 
+        Training our dual-channel model with non-diffuse materials significantly enhanced its ability to recognize second-order motion, achieving an average correlation of 0.902, closely matching human perception.
         
       </figcaption>
       <video class="video-element" autoplay loop muted playsinline>
@@ -710,11 +686,9 @@ Three  Our psychophysical experiment revealed a strong correlation between
   <div class="container has-text-centered">
     <figure>
       <figcaption>
-        One of the primary goals of the motion perception system is to infer a reliable object’s motion.
-but the Optical turbulence in the natural environment will severely make the estimation from the first order very unreliable.
-Since the emergence of second-order motion perception is highly related to object motion with optical turbulence. 
-From this observation, we hypothesize the natural environment may pushes the vision system to develop a new mechanism to counter strong optical turbulence and noise.
-This countering process might, at least partially, lead to the evolution of second-order motion perception.
+One of the primary goals of the motion perception system is to reliably infer an object’s motion. However, optical turbulence in natural environments often renders first-order motion estimation unreliable.
+        Observing that second-order motion perception is closely linked to handling optical turbulence, we hypothesize that natural environments drive the visual system to develop mechanisms to counteract such turbulence and noise. 
+        This adaptive process may have, at least partially, contributed to the evolution of second-order motion perception.
 
       </figcaption>
       <video class="video-rec" autoplay loop muted playsinline>
@@ -733,23 +707,58 @@ This countering process might, at least partially, lead to the evolution of sec
 <!-- Teaser 主视频展示 -->
 <section class="hero teaser">
   <video id="teaser" autoplay muted loop playsinline class="scaled-video">
-    <source src="./data_for_website/6_firsec.mp4" type="video/mp4">
+    <source src="./data_for_website/6_firsec_2.mp4" type="video/mp4">
      Your browser does not support the video tag.
   </video>
 
   
   <h2 class="subtitle has-text-centered overlay-text">
-   we presented some examples of the natural environment to highlight our argument, such as the water flowing in the river or the moving box with the vibration water.
- We humans can perceive the local optical noise generated by fluctuating water. However, globally, we can also infer the general moving direction of the flow. This is highly related to the functionality of second-order motion. 
+   We presented examples from natural environments to support our argument, such as water flowing in a river or a vibrating box with water. 
+    While humans perceive the local optical noise caused by fluctuating water, we can also infer the global motion direction of the flow. This ability is closely tied to the functionality of second-order motion perception.
 
-The isolated second-order motion may be rarely observed in natural environments; more often, it coexists with first-order motion as the optical fluctuation. 
-We suggest that joint consideration of first- and second-order motion may potentially make the vision system more stable and reliable even in complex and noisy environments.
-
-    
+Although isolated second-order motion is rarely observed in nature, it often coexists with first-order motion as optical fluctuations. 
+    We propose that integrating first- and second-order motion could enhance the stability and reliability of the visual system in complex and noisy environments.
 
   </h2>
 </section>
 
+  
+<hr class="section-divider">
+
+  <!-- Teaser 主视频展示 -->
+<section class="hero teaser">
+  <video id="teaser" autoplay muted loop playsinline class="scaled-video">
+    <source src="./data_for_website/6_firsec.mp4" type="video/mp4">
+     Your browser does not support video tags.
+  </video>
+
+  
+  <h2 class="subtitle has-text-centered overlay-text">
+The figure above illustrates the segmentation results for both natural scenes and pure drift-balanced motion \cite{secondordermotion}. 
+    The higher-order channel significantly enhances the model’s ability to identify objects in motion, producing finer segmentation compared to using the first-order channel alone. 
+    This advantage becomes particularly evident in noisy environments.
+
+On the left, we demonstrate that our framework can identify objects based purely on motion, even when they are spatially indistinct. 
+    The dual-channel model shows a significant advantage over the single first-order channel in handling such scenarios.
+  </h2>
+</section>
+
+
+    
+<hr class="section-divider">
+  <!-- Teaser 主视频展示 -->
+<section class="hero teaser">
+  <video id="teaser" autoplay muted loop playsinline class="scaled-video">
+    <source src="./data_for_website/6_firsec_3.mp4" type="video/mp4">
+     Your browser does not support video tags.
+  </video>
+
+  <h2 class="subtitle has-text-centered overlay-text">
+   We presented additional results on first-order motion-based stimuli and illusions, including reverse phi, missing fundamental illusion, motion-adaptive pooling, and layer/form cues-induced motion integration. 
+    These examples highlight the intricate mechanisms underlying first-order motion perception and its role in complex visual scenarios.
+
+  </h2>
+</section>
 
 
   
