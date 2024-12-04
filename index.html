@@ -387,25 +387,27 @@
 <style>
   /* 容器布局样式 */
   .video-container-horizontal {
-    display: flex; /* 使用 flex 布局实现水平排列 */
-    align-items: center; /* 垂直居中 */
-    justify-content: space-between; /* 左右分布 */
-    gap: 20px; /* 设置文字与视频之间的间距 */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 100vw; /* 允许子元素扩展到视口宽度 */
   }
 
   /* 左侧文字样式 */
   .caption-container figcaption {
-    font-size: 1.3em; /* 字体大小 */
-    color: #555; /* 文字颜色 */
-    text-align: left; /* 左对齐文字 */
-    max-width: 45%; /* 限制最大宽度 */
-    margin: 0; /* 移除默认边距 */
+    font-size: 1.3em;
+    color: #555;
+    text-align: left;
+    max-width: 40%; /* 限制文字宽度 */
+    margin: 0;
   }
 
   /* 右侧视频样式 */
   .video-left {
-    width: 100vw; /* 占据视口宽度的90% */
-    height: auto; /* 保持视频宽高比 */
+    flex-grow: 1; /* 视频占用剩余空间 */
+    max-width: 70%; /* 视频最大宽度 */
+    height: auto;
     display: block;
   }
 </style>
@@ -779,7 +781,7 @@ On the left, we demonstrate that our framework can identify objects based purely
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{xxx,
   author    = {xxxx},
-  title     = {HuPerFlow: a Human Perceived Flow dataset},
+  title     = {Machine Learning Modeling for Multi-order Human Visual Motion Perception},
   journal   = {xxx},
   year      = {2025},
 }</code></pre>
