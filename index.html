@@ -258,37 +258,7 @@
 </style>
 
 
-<style>
-  /* 视频样式 */
-  .video-left {
-    width: 90vw; /* 占据视口宽度的90% */
-    height: auto; /* 保持视频宽高比 */
-    margin: 0 auto; /* 水平居中 */
-    display: block;
-  }
 
-  /* 调整视频说明的样式 */
-  figcaption {
-    font-size: 1.5em; /* 调整字体大小 */
-    margin-bottom: 10px; /* 与视频间距 */
-    color: #555; /* 文本颜色 */
-    text-align: left; /* 左对齐文字 */
-  }
-
-  /* 视频容器样式 */
-  .video-container {
-    display: flex;
-    flex-direction: column; /* 垂直排列 */
-    align-items: center; /* 水平居中 */
-    text-align: center; /* 容器内文字居中 */
-  }
-
-  /* 确保文字宽度与视频一致 */
-  .video-container figcaption {
-    width: 90vw; /* 与视频宽度一致 */
-    margin: 0 auto 10px auto; /* 保持水平居中 */
-  }
-</style>
 
 
 <style>
@@ -387,36 +357,59 @@
 
 <hr class="section-divider">
   
-<section class="section">
+
+  <section class="section">
   <div class="container">
-    <!-- 使用 Columns 布局 -->
-    <div class="columns is-vcentered">
-      <!-- 左侧视频部分 -->
-      <div class="video-left">
-        <figure>
-       <figcaption> 
-         Recent advances in deep learning have pushed machine vision capabilities to rival or even surpass human performance in many visual tasks, including visual motion estimation. 
+    <div class="video-container-horizontal">
+      <!-- 左侧文字 -->
+      <div class="caption-container">
+        <figcaption>
+          Recent advances in deep learning have pushed machine vision capabilities to rival or even surpass human performance in many visual tasks, including visual motion estimation. 
          While state-of-the-art (SOTA) models achieve remarkable accuracy in calculating ground-truth optical flow, they lack alignment with human motion perception. 
          Structurally, human motion perception involves complex spatiotemporal dynamics, whereas current CV models primarily focus on frame-to-frame correspondence. 
          This design prioritization often ignores neurophysiological plausibility. Perceptually, CV models struggle to replicate human motion perception, 
          failing under experimental variations, misinterpreting visual illusions, and overlooking inherent human biases.
          The right examples illustrate motion integration with depth cues and the Mario reverse-phi illusion.
 
-          
-          <video class="video-element" autoplay loop muted playsinline>
-            <source src="./data_for_website/2_gap_1.mp4" type="video/mp4">
-            Your browser does not support video tags.
-          </video>
-        </figure>
+        </figcaption>
       </div>
-      <!-- 右侧文字部分 -->
-      <div class="video-left">
-        <p> .
-        </p>
+      <!-- 右侧视频 -->
+      <div class="video-container">
+        <video class="video-left" autoplay loop muted playsinline>
+          <source src="./data_for_website/2_gap_1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* 容器布局样式 */
+  .video-container-horizontal {
+    display: flex; /* 使用 flex 布局实现水平排列 */
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 左右分布 */
+    gap: 20px; /* 设置文字与视频之间的间距 */
+  }
+
+  /* 左侧文字样式 */
+  .caption-container figcaption {
+    font-size: 1.5em; /* 字体大小 */
+    color: #555; /* 文字颜色 */
+    text-align: left; /* 左对齐文字 */
+    max-width: 45%; /* 限制最大宽度 */
+    margin: 0; /* 移除默认边距 */
+  }
+
+  /* 右侧视频样式 */
+  .video-left {
+    width: 45%; /* 视频宽度 */
+    height: auto; /* 保持视频宽高比 */
+    display: block;
+  }
+</style>
+
 
 
 
