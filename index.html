@@ -221,7 +221,7 @@
 
   <style>
   .scaled-video-large {
-    width: 90vw; /* 占据视口宽度的 70% */
+    width: 80vw; /* 占据视口宽度的 70% */
     height: auto; /* 占据视口高度的 70% */
     object-fit: contain; /* 保持视频内容完整，可能会有空白边 */
     display: block; /* 使视频为块级元素，以便居中 */
@@ -234,7 +234,7 @@
     padding: 10px;
     border-radius: 5px;
     max-width: 70%;
-    margin-top: -10px; /* 仅调整顶部间距 */
+    margin-top: 10px; /* 仅调整顶部间距 */
     margin-left: auto;
     margin-right: auto; /* 水平居中 */
 }
@@ -348,7 +348,7 @@
   .gradient-divider {
     border: none; /* 移除默认边框 */
     height: 6px; /* 设置分隔线粗细 */
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* 彩虹渐变颜色 */
+    background: linear-gradient(to right, red, orange, yellow, violet); /* 彩虹渐变颜色 */
     margin: 20px 0; /* 上下间距 */
     border-radius: 3px; /* 圆角效果 */
   }
@@ -415,9 +415,9 @@
 
   /* 左侧文字样式 */
   .caption-container figcaption {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #555;
-    text-align: left;
+    text-align: justify;
     max-width: 85%; /* 限制文字宽度 */
     margin: 0;
   }
@@ -439,7 +439,7 @@
     <figure>
       <figcaption>
        Among the many gaps between CV models and human perception, second-order motion processing stands out as a significant challenge. 
-        Humans perceive these two stimuli as having similar speeds and directions, despite their differences in frequency space.
+        Humans perceive these two stimuli as having similar speeds and directions despite their differences in frequency space.
         Fourier analysis reveals that first-order motion exhibits asymmetric energy in the Fourier domain, 
         whereas second-order motion lacks detectable energy, making it invisible to classical analysis. Mechanistically, 
         humans employ distinct processing channels for second-order motion, but CV models fail to account for this.
