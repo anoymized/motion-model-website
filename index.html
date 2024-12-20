@@ -2,17 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- 描述信息，显示在搜索引擎结果中，可以根据实际内容更改 -->
+
   <meta name="description"
         content="Machine Learning Modeling for Multi-order Human Visual Motion Perception">
-  <!-- 关键词，用于搜索引擎优化，可根据实际内容调整 -->
+ 
   <meta name="keywords" content="Visual motion perception, Optical flow, Second-order motion, Graph neural network, Motion segmentation">
-  <!-- 视口设置，让页面在移动设备上更好显示 -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 网页标题，将显示在浏览器标签页上，可自定义 -->
+
   <title>MotionModel</title>
 
-  <!-- Google Analytics 跟踪代码，用于网站流量统计 -->
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,20 +26,19 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <!-- 加载Google字体，可根据需要修改 -->
+
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-  <!-- 加载CSS样式文件 -->
+
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- 页面图标 -->
+
   <link rel="icon" href="./static/images/eye.svg">
 
-  <!-- 加载jQuery和其他JS库 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -48,7 +47,7 @@
 </head>
 <body>
 
-<!-- 导航栏 -->
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <!-- 菜单按钮 -->
@@ -60,14 +59,14 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- 首页图标，可修改链接 -->
+ 
       <a class="navbar-item" href="xxxx">
         <span class="icon">
           <i class="fas fa-home"></i>
         </span>
       </a>
 
-      <!-- 更多研究的下拉菜单 -->
+  
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">More Research  </a>
         <div class="navbar-dropdown">
@@ -80,7 +79,7 @@
   </div>
 </nav>
   
-<!-- 标题和作者信息部分 -->
+
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -100,14 +99,14 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <!-- 作者所属机构信息 -->
+        
             <span class="author-block"><sup>1</sup>Cognitive Informatics Lab, Kyoto University, Japan,</span>
           
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- 论文链接，点击时弹出提示 -->
+         
               <span class="link-block">
                 <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
@@ -127,14 +126,14 @@
                   <span>Video</span>
                 </a>
               </span>
-              <!-- 代码链接，点击时弹出提示 -->
+            
               <span class="link-block">
                 <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
                 </a>
               </span>
-              <!-- 数据集链接，点击时弹出提示 -->
+           
               <span class="link-block">
                 <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="far fa-images"></i></span>
@@ -220,6 +219,26 @@
 }
 </style>
 
+  <style>
+  .scaled-video-large {
+    width: 90vw; /* 占据视口宽度的 70% */
+    height: auto; /* 占据视口高度的 70% */
+    object-fit: contain; /* 保持视频内容完整，可能会有空白边 */
+    display: block; /* 使视频为块级元素，以便居中 */
+    margin: 0 auto; /* 水平居中对齐 */
+  }
+ .overlay-text {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+    margin-top: -10px; /* 仅调整顶部间距 */
+    margin-left: auto;
+    margin-right: auto; /* 水平居中 */
+}
+</style>
 
 <style>
   /* 视频样式 */
@@ -476,7 +495,6 @@
 <h2 class="title is-3 colorful-title">     Two-Stages-Dual-Channel Model Design</h2>
 <section class="section">
   <div class="container">
-    <!-- 图像及文字说明 -->
     <figure class="image-container">
       <figcaption>
       Our prototype model employs a two-stage motion processing architecture, combining classical motion energy (ME) sensors in Stage I with deep neural networks (DNNs) in Stage II.
@@ -522,15 +540,21 @@ To process higher-order motion, we introduced an alternative pathway, depicted b
       Given the computational capabilities of neural networks, it is theoretically feasible for a modified model to detect second-order motion after sufficient training on artificial second-order motion stimuli. 
         However, such training is impractical in natural environments where pure second-order motion rarely occurs. This raises a critical scientific question: 
         How and why does the biological visual system naturally acquire the ability to perceive second-order motion?
+        What kind of functionality/ advantage does second-order motion perception provide to our visual system?
 
 We hypothesize that second-order motion perception assists in estimating the motion of objects with varying material properties.
        
-        As shown in the video below, materials have distinct reflection and transmission characteristics, such as diffuse, transmission, and specular.
+        As shown in the video below, materials have distinct reflection and transmission characteristics, such as diffuse, transmission, 
+        and specular.
 Diffuse materials exhibit reliable luminance flow due to adherence to the constant brightness assumption.
-        Local brightness shifts in these materials closely correspond to actual object motion, enabling effective detection by first-order motion detectors.
-In contrast, materials with non-diffuse reflections, such as those with transmission or specular properties, generate unpredictable optical turbulence or noise on the surface. 
-        These disturbances disrupt local luminance shifts, making them unreliable for inferring object motion and challenging first-order motion systems. Despite this, humans can accurately perceive the motion of non-diffuse objects. 
-        We propose that the human visual system compensates for this limitation by employing higher-order motion processing, such as second-order motion perception, to estimate object motion even in the presence of optical turbulence.
+        Local brightness shifts in Diffuse materials closely correspond to actual object motion, enabling effective detection by first-order motion detectors.
+In contrast, materials with non-diffuse reflections, such as those with transmission or specular properties,
+        generate unpredictable optical turbulence or noise on the surface. 
+        These disturbances disrupt local luminance shifts, making them unreliable for inferring object motion 
+        and challenging first-order motion systems. Despite this, humans can accurately perceive the motion of non-diffuse objects. 
+        We propose that the human visual system compensates for this limitation 
+        by employing higher-order motion processing, such as second-order motion perception,
+        to estimate object motion even in the presence of optical turbulence.
 
 
       </figcaption>
@@ -584,7 +608,6 @@ In contrast, materials with non-diffuse reflections, such as those with transmis
   
   
 <hr class="section-divider">
-<!-- 轮播视频展示 -->
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
@@ -603,16 +626,7 @@ In contrast, materials with non-diffuse reflections, such as those with transmis
             <source src="./data_for_website/MyVideo_4.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline height="100%">
-            <source src="./data_for_website/MyVideo_4.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video autoplay controls muted loop playsinline height="100%">
-            <source src="./data_for_website/MyVideo_4.mp4" type="video/mp4">
-          </video>
-        </div>
+    
         <div class="item">
           <video autoplay controls muted loop playsinline height="100%">
             <source src="./data_for_website/MyVideo_5.mp4" type="video/mp4">
@@ -748,7 +762,7 @@ On the left, we demonstrate that our framework can identify objects based purely
 <hr class="section-divider">
   <!-- Teaser 主视频展示 -->
 <section class="hero teaser">
-  <video id="teaser" autoplay muted loop playsinline class="scaled-video">
+  <video id="teaser" autoplay muted loop playsinline class="scaled-video-large">
     <source src="./data_for_website/6_firsec_3.mp4" type="video/mp4">
      Your browser does not support video tags.
   </video>
