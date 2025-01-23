@@ -50,7 +50,6 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <!-- 菜单按钮 -->
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -85,7 +84,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <!-- 主要标题，页面显示的标题，可自定义 -->
+        
           <h1 class="title is-1 publication-title colorful-title">Machine Learning Modeling for Multi-order Human Visual Motion Perception</h1>
           <div class="is-size-5 publication-authors">
             <!-- 作者名和链接，可修改成实际作者信息 -->
@@ -108,18 +107,18 @@
             <div class="publication-links">
          
               <span class="link-block">
-                <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/pdf/2501.12810" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
+                 <a href="https://arxiv.org/abs/2501.12810" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- 视频链接，点击时弹出提示 -->
+        
               <span class="link-block">
                 <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-youtube"></i></span>
@@ -128,7 +127,7 @@
               </span>
             
               <span class="link-block">
-                <a href="javascript:void(0);" onclick="showAlert()" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/anoymized/multi-order-motion-model" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
                 </a>
@@ -166,7 +165,7 @@
   /* 标题居中对齐 */
   .colorful-title {
     text-align: center;
-    font-size: 2.5em; /* 根据需要调整字体大小 */
+    font-size: 2.5em; 
   }
 
   /* 为不同颜色定义类 */
@@ -179,12 +178,12 @@
 </style>
 
 <script>
-  // JavaScript代码：将标题的每个单词分配随机颜色
+ 
   document.addEventListener("DOMContentLoaded", function() {
     const title = document.querySelector(".colorful-title");
     const words = title.innerText.split(" ");
     title.innerHTML = words.map((word, index) => {
-      const colorClass = `word-color-${(index % 6) + 1}`; // 分配颜色类
+      const colorClass = `word-color-${(index % 6) + 1}`; 
       return `<span class="${colorClass}">${word}</span>`;
     }).join(" ");
   });
@@ -392,7 +391,7 @@
 
         </figcaption>
       </div>
-      <!-- 右侧视频 -->
+     
       <div class="video-container">
         <video class="video-left" autoplay loop muted playsinline>
           <source src="./data_for_website/2_gap_1.mp4" type="video/mp4">
@@ -783,12 +782,17 @@ On the left, we demonstrate that our framework can identify objects based purely
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{xxx,
-  author    = {xxxx},
-  title     = {Machine Learning Modeling for Multi-order Human Visual Motion Perception},
-  journal   = {xxx},
-  year      = {2025},
-}</code></pre>
+    <pre><code>
+      @misc{sun2025machinelearningmodelingmultiorder,
+      title={Machine Learning Modeling for Multi-order Human Visual Motion Processing}, 
+      author={Zitang Sun and Yen-Ju Chen and Yung-Hao Yang and Yuan Li and Shin'ya Nishida},
+      year={2025},
+      eprint={2501.12810},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.12810}, 
+}
+    </code></code></pre>
   </div>
 </section>
 
@@ -808,7 +812,7 @@ On the left, we demonstrate that our framework can identify objects based purely
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <!-- 网站许可证信息 -->
+      
           <p>
             This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
